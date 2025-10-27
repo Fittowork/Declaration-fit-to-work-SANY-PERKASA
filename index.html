@@ -231,8 +231,40 @@
     };
   });
 
-  updateReasonVisibility();
+updateReasonVisibility();
 })();
 </script>
-</body>
+<script>
+// Script otomatis menampilkan kolom input jika jawabannya 'YA'
+document.addEventListener('DOMContentLoaded', function () {
+  const rows = document.querySelectorAll('.row');
+  rows.forEach(function (row, index) {
+    const radios = row.querySelectorAll('input[type="radio"]');
+    if (radios.length > 0) {
+      // buat kolom tambahan tersembunyi
+      const extraDiv = document.createElement('div');
+      extraDiv.className = 'extra-field';
+      extraDiv.style.display = 'none';
+      extraDiv.innerHTML = `
+        <label>(wajib diisi):</label>
+        <input type="text" name="keterangan_${index}" placeholder="Tulis keterangan di sini" style="margin-top:5px; width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;" />
+      `;
+      row.appendChild(extraDiv);
+
+      radios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          if (radio.value.toLowerCase() === 'ya') {
+            extraDiv.style.display = 'block';
+            extraDiv.querySelector('input').setAttribute('required', 'required');
+          } else {
+            extraDiv.style.display = 'none';
+            extraDiv.querySelector('input').removeAttribute('required');
+            extraDiv.querySelector('input').value = '';
+          }
+        });
+      });
+    }
+  });
+});
+</script></body>
 </html>
