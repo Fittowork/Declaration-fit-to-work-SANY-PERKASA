@@ -258,5 +258,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-</script></body>
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  if (!form) return;
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    fetch("https://script.google.com/macros/s/AKfycby4cA1U6pi2eBqGfYG6mp4P_mgvuZkFomYLi8fXti8_PhxQ4S9jxJZV_uIn87jlxvaY/exec", {
+      method: "POST",
+      body: data
+    })
+    .then(res => res.text())
+    .then(() => {
+      alert("✅ Data berhasil dikirim ke Google Sheet!");
+      form.reset();
+    })
+    .catch(err => {
+      alert("❌ Terjadi kesalahan: " + err.message);
+    });
+  });
+});
+</script>
+
+</body>
 </html>
