@@ -61,34 +61,34 @@
 <div class="row">
 <label>Apakah Konsentrasi Anda terganggu hari ini?</label>
 <div class="radio-group">
-<label class="inline"><input name="konsentrasi" type="radio" value="Tidak"/> Tidak</label>
-<label class="inline"><input name="konsentrasi" type="radio" value="Ya"/> Ya</label>
+<label class="inline"><input name="konsentrasi" type="radio" value="Tidak" required /> Tidak</label>
+<label class="inline"><input name="konsentrasi" type="radio" value="Ya" required /> Ya</label>
 </div>
 </div>
 <div class="row">
 <label>Jumlah jam tidur Anda kurang dari 6 jam dalam 24 jam terakhir?</label>
 <div class="radio-group">
-<label class="inline"><input name="jam_tidur" type="radio" value="Tidak"/> Tidak</label>
-<label class="inline"><input name="jam_tidur" type="radio" value="Ya"/> Ya</label>
+<label class="inline"><input name="jam_tidur" type="radio" value="Tidak" required /> Tidak</label>
+<label class="inline"><input name="jam_tidur" type="radio" value="Ya" required /> Ya</label>
 </div>
 </div>
 <div class="row">
 <label>Apakah Anda mengonsumsi obat/zat yang menyebabkan kantuk?</label>
 <div class="radio-group">
-<label class="inline"><input name="obat_kantuk" type="radio" value="Tidak"/> Tidak</label>
-<label class="inline"><input name="obat_kantuk" type="radio" value="Ya"/> Ya</label>
+<label class="inline"><input name="obat_kantuk" type="radio" value="Tidak" required /> Tidak</label>
+<label class="inline"><input name="obat_kantuk" type="radio" value="Ya" required /> Ya</label>
 </div>
 </div>
 <div class="row">
 <label>Apakah ada kelelahan fisik yang Anda rasakan?</label>
 <div class="radio-group">
-<label class="inline"><input name="kelelahan" type="radio" value="Tidak"/> Tidak</label>
-<label class="inline"><input name="kelelahan" type="radio" value="Ya"/> Ya</label>
+<label class="inline"><input name="kelelahan" type="radio" value="Tidak" required /> Tidak</label>
+<label class="inline"><input name="kelelahan" type="radio" value="Ya" required /> Ya</label>
 </div>
 </div>
 <div class="row" id="reasonRow" style="display:none">
 <label for="reason">Jika Ya, jelaskan alasan</label>
-<textarea id="reason" name="reason" placeholder="Tuliskan alasan (opsional)" rows="3"></textarea>
+<textarea id="reason" name="reason" placeholder="Tuliskan alasan (required)" rows="3"></textarea>
 </div>
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
 <button class="btn" type="submit">Kirim</button>
